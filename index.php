@@ -17,7 +17,7 @@ include_once('register_fields.php');
 // Register the flexslider scripts
 include_once('register_scripts.php');
 
-// create a function that returns a loop of all slides with info
+// create a function that returns a loop of slides
 include_once('create_loop.php');
 
 // register the widget
