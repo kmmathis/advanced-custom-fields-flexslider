@@ -17,11 +17,14 @@ function acffs_loop() {
 			$link_close = '</a>';
 			$link_more = ' <a href="' . get_sub_field('slide_url') . '">[Read more]</a>';
 		}
-		echo $link_open . '<img src="' . get_sub_field('slide_image') . '" alt="" />' . $link_close;
+		echo '<li>' . $link_open . '<img src="' . get_sub_field('slide_image') . '" alt="" />' . $link_close;
 		if ( get_sub_field('slide_description') ) {
 			echo '<p class="acffs_description">' . get_sub_field('slide_description') . $link_more . '</p>';
 		}
+		echo '</li>';
 	endwhile;
+
+	echo '</ul></div>';
 
 }
 
