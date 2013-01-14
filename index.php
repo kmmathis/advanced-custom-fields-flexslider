@@ -8,9 +8,6 @@
 	Version: 0.1
 */
 
-// Create Slides post type
-include_once('register_post_type.php');
-
 // Register the fields with ACF
 include_once('register_fields.php');
 
