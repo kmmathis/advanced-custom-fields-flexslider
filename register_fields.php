@@ -14,26 +14,20 @@ add_action( 'init', 'register_slide_options_page');
 
 // Register the custom fields for our slides
 
-/**
- * Register field groups
- * The register_field_group function accepts 1 array which holds the relevant data to register a field group
- * You may edit the array as you see fit. However, this may result in errors if the array is not compatible with ACF
- * This code must run every time the functions.php file is read
- */
-
 function register_slide_fields() {
+
 	if(function_exists("register_field_group"))
 	{
 		register_field_group(array (
-			'id' => '50f45218adee8',
+			'id' => '50f458eec3f5a',
 			'title' => 'Slider',
 			'fields' => 
 			array (
 				0 => 
 				array (
 					'key' => 'field_7',
-					'label' => 'Slide',
-					'name' => 'slide',
+					'label' => 'Slides',
+					'name' => 'acffs_slides',
 					'type' => 'repeater',
 					'order_no' => 0,
 					'instructions' => '',
@@ -47,6 +41,7 @@ function register_slide_fields() {
 							array (
 								'field' => 'null',
 								'operator' => '==',
+								'value' => '',
 							),
 						),
 						'allorany' => 'all',
@@ -56,7 +51,7 @@ function register_slide_fields() {
 						'field_9' => 
 						array (
 							'label' => 'Slide Image',
-							'name' => 'slide_image',
+							'name' => 'acffs_slide_image',
 							'type' => 'image',
 							'instructions' => '',
 							'column_width' => '',
@@ -68,7 +63,7 @@ function register_slide_fields() {
 						'field_8' => 
 						array (
 							'label' => 'Slide Description',
-							'name' => 'slide_description',
+							'name' => 'acffs_slide_description',
 							'type' => 'textarea',
 							'instructions' => 'Enter a short description for this slide.',
 							'column_width' => '',
@@ -80,7 +75,7 @@ function register_slide_fields() {
 						'field_11' => 
 						array (
 							'label' => 'Slide Post',
-							'name' => 'slide_post',
+							'name' => 'acffs_slide_post',
 							'type' => 'page_link',
 							'instructions' => 'Link this slide to a post or page.',
 							'column_width' => '',
@@ -97,7 +92,7 @@ function register_slide_fields() {
 						'field_12' => 
 						array (
 							'label' => 'Slide URL',
-							'name' => 'slide_url',
+							'name' => 'acffs_slide_url',
 							'type' => 'text',
 							'instructions' => 'Link this slide to a custom URL',
 							'column_width' => '',
@@ -111,6 +106,32 @@ function register_slide_fields() {
 					'row_limit' => '',
 					'layout' => 'table',
 					'button_label' => 'Add Slide',
+				),
+				1 => 
+				array (
+					'key' => 'field_13',
+					'label' => 'Slide Banner',
+					'name' => 'acffs_slide_banner',
+					'type' => 'text',
+					'order_no' => 1,
+					'instructions' => 'Enter text here to display it as a banner over the slider.',
+					'required' => 0,
+					'conditional_logic' => 
+					array (
+						'status' => 0,
+						'rules' => 
+						array (
+							0 => 
+							array (
+								'field' => 'null',
+								'operator' => '==',
+								'value' => '',
+							),
+						),
+						'allorany' => 'all',
+					),
+					'default_value' => '',
+					'formatting' => 'none',
 				),
 			),
 			'location' => 
